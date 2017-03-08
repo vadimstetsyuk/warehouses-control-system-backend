@@ -34,7 +34,7 @@ warehousesRouter
 
         var warehouseId = req.params.id;
 
-        Warehouse.findOne({ id: warehouseId }, (err, warehouse) {
+        Warehouse.findOne({ id: warehouseId }, (err, warehouse) => {
             if (err) {
                 res.status(500).send(err);
                 return;
@@ -45,12 +45,12 @@ warehousesRouter
         });
 
     })
-    .put((req, res) {
+    .put((req, res) => {
         console.log('PUT /warehouses/:id');
 
         var warehouseId = req.params.id;
 
-        Warehouse.findOne({ id: warehouseId }, (err, warehouse) {
+        Warehouse.findOne({ id: warehouseId }, (err, warehouse) => {
             if (err) {
                 res.status(500).send(err);
                 return;
