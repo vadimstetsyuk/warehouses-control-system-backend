@@ -67,7 +67,7 @@ warehousesRouter
                 warehouse.maxTemperature = req.body.maxTemperature;
 
                 warehouse.save();
-                
+
                 res.json(warehouse);
                 return;
             }
@@ -75,6 +75,35 @@ warehousesRouter
             res.status(404).json({
                 message: 'Warehouse with id ' + warehouseId + 'was not found'
             });
+        });
+    })
+    .delete((req, res) => {
+        console.log('DELETE /warehouses/:id');
+
+        var warehouseId = req.params.id;
+
+        Warehouse.findOne({ id: warehouseId }, (err, warehouse) => {
+            if (err) {
+                res.status(500).send(err);
+                return;
+            }
+
+            if(warehouse) {
+                warehouse.remove((err) => {
+                    if(err) {
+                        res.status(500).send(err);
+                        return;
+                    }
+
+                    res.status(200).json({
+                        'message': 'Warehouse with id ' + warehouseId + ' was removed.'
+                    });
+                });
+            } else {
+                res.status(404).json({
+                    message: 'Warehouse with id ' + warehouseId + ' was not found.'
+                });
+            }
         });
     });
 
