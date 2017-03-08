@@ -1,10 +1,11 @@
 {
   "name": "warehouses-control-system-app",
   "version": "1.0.0",
+  "description": "Warehouse control system.The RESTful API built with Node.js, Express.js and Mongoose.",
+  "author": "Vadym Stetsyuk",
   "dependencies": {
     "body-parser": "^1.16.1",
     "express": "^4.14.1",
-    "hbs": "^4.0.1",
     "mongodb": "^2.2.22",
     "mongoose": "^4.8.4"
   }
