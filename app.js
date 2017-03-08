@@ -16,6 +16,9 @@ app.use(bodyBarser.urlencoded({
     extended: true
 }));
 
+app.use('/api', warehousesRouter);
+app.use('/api', productsRouter);
+
 app.listen(PORT, () => {
     console.log('Listening on port ' + PORT);
 })
