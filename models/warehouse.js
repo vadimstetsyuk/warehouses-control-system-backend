@@ -27,11 +27,11 @@ var warehouseSchema = new Schema({
         type: Number,
         required: true
     },
-    humidity: {
+    temperature: {
         type: Number,
         required: true
     },
-    temperature: {
+    humidity: {
         type: Number,
         required: true
     },

@@ -2,10 +2,23 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var parametersSchema = new Schema({
-    id: Number,
-    parentId: Number,
-    temperature: Number,
-    humidity: Number
+    id: {
+        type: Number,
+        unique: true,
+        required: true
+    },
+    warehouseId: {
+        type: Number,
+        required: true
+    },
+    temperature: {
+        type: Number,
+        required: true
+    },
+    humidity: {
+        type: Number,
+        required: true
+    }
 }, { collection: 'Parameters' });
 
 module.exports = mongoose.model('Parameters', parametersSchema);

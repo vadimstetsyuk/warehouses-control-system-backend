@@ -7,7 +7,7 @@ var productSchema = new Schema({
         unique: true,
         required: true
     },
-    parentId: {
+    warehouseId: {
         type: Number,
         required: true
     },
