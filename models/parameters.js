@@ -19,6 +19,6 @@ var parametersSchema = new Schema({
         type: Number,
         required: true
     }
-}, { collection: 'Parameters' });
+}, { collection: 'parameters' });
 
 module.exports = mongoose.model('Parameters', parametersSchema);

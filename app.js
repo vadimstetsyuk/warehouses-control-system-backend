@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var bodyBarser = require('body-parser');
 var productsRouter = require('./routers/products');
 var warehousesRouter = require('./routers/warehouses');
+var parametersRouter = require('./routers/parameters');
 
 var app = express();
 
@@ -19,6 +20,7 @@ app.use(bodyBarser.urlencoded({
 
 app.use('/api', warehousesRouter);
 app.use('/api', productsRouter);
+app.use('/api', parametersRouter);
 
 app.listen(PORT, () => {
     console.log('Listening on port ' + PORT);
