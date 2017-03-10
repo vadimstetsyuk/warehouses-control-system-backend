@@ -4,7 +4,6 @@ var Warehouse = require('../models/warehouse');
 
 var parametersRouter = express.Router();
 
-
 parametersRouter
     .route('/parameters')
     .post((req, res) => {

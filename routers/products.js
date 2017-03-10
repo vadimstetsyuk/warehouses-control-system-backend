@@ -27,8 +27,6 @@ productsRouter
         res.status(201).send(product);
     });
 
-
-
 productsRouter
     .route('/products/:id')
     .get((req, res) => {
