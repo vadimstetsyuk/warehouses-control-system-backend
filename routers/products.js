@@ -59,7 +59,7 @@ productsRouter
             }
 
             if (product) {
-                product.parentId = req.body.parentId;
+                product.warehouseId = req.body.warehouseId;
                 product.name = req.body.name;
                 product.date = req.body.date;
                 product.endDate = req.body.endDate;

@@ -61,10 +61,13 @@ warehousesRouter
                 warehouse.name = req.body.name;
                 warehouse.img = req.body.img;
                 warehouse.info = req.body.info;
-                warehouse.minHumidity = req.body.minHumidity;
-                warehouse.maxHumidity = req.body.maxHumidity;
+                warehouse.amountProducts = req.body.amountProducts;
+                warehouse.temperature = req.body.temperature;
+                warehouse.humidity = req.body.humidity;
                 warehouse.minTemperature = req.body.minTemperature;
                 warehouse.maxTemperature = req.body.maxTemperature;
+                warehouse.minHumidity = req.body.minHumidity;
+                warehouse.maxHumidity = req.body.maxHumidity;
 
                 warehouse.save();
 
