@@ -35,19 +35,19 @@ var warehouseSchema = new Schema({
         type: Number,
         required: true
     },
-    minHumidity: {
-        type: Number,
-        required: true
-    },
-    maxHumidity: {
-        type: Number,
-        required: true
-    },
     minTemperature: {
         type: Number,
         required: true
     },
     maxTemperature: {
+        type: Number,
+        required: true
+    },
+    minHumidity: {
+        type: Number,
+        required: true
+    },
+    maxHumidity: {
         type: Number,
         required: true
     }

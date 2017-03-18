@@ -32,18 +32,16 @@ productsRouter
     .get((req, res) => {
         console.log('GET /products/:id');
 
-        var productId = req.params.id;
-
-        Product.findOne({ id: productId }, (err, product) => {
+        var warehouseId = req.params.id;
+        Product.find({ warehouseId: warehouseId }, (err, products) => {
             if (err) {
                 res.status(500).send(err);
                 return;
             }
 
-            console.log(product);
-            res.json(product);
+            console.log(products);
+            res.json(products);
         });
-
     })
     .put((req, res) => {
         console.log('PUT /products/:id');
