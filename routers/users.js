@@ -1,5 +1,6 @@
 var express = require('express');
 var User = require('../models/user');
+var md5 = require('md5');
 
 var usersRouter = express.Router();
 
@@ -22,18 +23,18 @@ usersRouter
         console.log('POST /users');
 
         var user = new User(req.body);
-
+        user.password = md5(user.password);
         user.save();
 
         res.status(201).send(user);
     });
 
 usersRouter
-    .route('users/:id')
+    .route('/users/:id')
     .get((req, res) => {
         console.log('GET /users/:id');
 
-        var userId = req.params.id;
+        let userId = req.params.id;
 
         User.findOne({ id: userId }, (err, user) => {
             if (err) {
@@ -48,7 +49,7 @@ usersRouter
     .put((req, res) => {
         console.log('PUT /users/:id');
 
-        var userId = req.params.id;
+        let userId = req.params.id;
 
         User.findOne({ id: userId }, (err, user) => {
             if (err) {
@@ -57,11 +58,11 @@ usersRouter
             }
 
             if (user) {
-                user.firstName = req.body.firstName;
-                user.lastName = req.body.lastName;
+                user.firstname = req.body.firstname;
+                user.lastname = req.body.lastname;
                 user.username = req.body.username;
                 user.email = req.body.email;
-                user.password = req.body.password;
+                user.password = md5(req.body.password);
                 user.role = req.body.role;
 
                 user.save();
@@ -78,7 +79,7 @@ usersRouter
     .delete((req, res) => {
         console.log('DELETE /users/:id');
 
-        var userId = req.params.id;
+        let userId = req.params.id;
 
         User.findOne({ id: userId }, (err, user) => {
             if (err) {

@@ -7,11 +7,11 @@ var userSchema = new Schema({
         unique: true,
         required: true
     },
-    firstName: {
+    firstname: {
         type: String,
         required: true
     },
-    lastName: {
+    lastname: {
         type: String,
         required: true
     },
@@ -20,16 +20,16 @@ var userSchema = new Schema({
         unique: true,
         required: true
     },
+    role: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         unique: true,
         required: true
     },
     password: {
-        type: String,
-        required: true
-    },
-    role: {
         type: String,
         required: true
     },
